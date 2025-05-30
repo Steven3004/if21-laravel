@@ -68,7 +68,16 @@ class FakultasController extends Controller
      */
     public function update(Request $request, Fakultas $fakultas)
     {
-        //
+       
+            $fakultas = fakultas::findOrfail($fakultas);
+
+            $input = $request->validate([
+                'nama' => 'required',
+                'singkatan' => 'require',
+                'nama_dekan' => 'require',
+                
+            ]);
+        
     }
 
     /**
