@@ -70,6 +70,18 @@ class FakultasController extends Controller
      */
     public function update(Request $request, $fakultas)
     {
+<<<<<<< HEAD
+       
+            $fakultas = fakultas::findOrfail($fakultas);
+
+            $input = $request->validate([
+                'nama' => 'required',
+                'singkatan' => 'require',
+                'nama_dekan' => 'require',
+                
+            ]);
+        
+=======
         $fakultas = Fakultas::findOrFail($fakultas);
         // dd($fakultas);
         // validasi input form
@@ -86,6 +98,7 @@ class FakultasController extends Controller
         // redirect ke route fakultas.index
         return redirect()->route('fakultas.index')
                          ->with('success', 'Fakultas berhasil diubah');
+>>>>>>> b8ed7ec3e88ec122bf958f03b78cac7ecfb4473f
     }
 
     /**
