@@ -30,7 +30,11 @@
             </div>
             </div>
             <div class="card-body">
+<<<<<<< HEAD
                 <a href="{{ route('mahasiswa.create') }}" class="btn btn-sm btn-primary"><i class="bi bi-file-earmark-plus-fill"></i> Tambah</a>
+=======
+                <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary">Tambah</a>
+>>>>>>> 394dcf666dc4f1e3fd9b6935a2f3a4cc79f2b71e
                 <table class="table">
                     <thead>
                         <tr>

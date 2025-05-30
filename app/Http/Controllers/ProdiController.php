@@ -31,7 +31,10 @@ class ProdiController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         // validasi input form
+=======
+>>>>>>> 394dcf666dc4f1e3fd9b6935a2f3a4cc79f2b71e
         $input = $request->validate([
             'nama' => 'required|unique:prodi',
             'singkatan' => 'required',
@@ -45,7 +48,11 @@ class ProdiController extends Controller
 
         // redirect ke route fakultas.index
         return redirect()->route('prodi.index')
+<<<<<<< HEAD
                          ->with('success', 'Program studi berhasil disimpan');
+=======
+                         ->with('success', 'Fakultas berhasil disimpan');
+>>>>>>> 394dcf666dc4f1e3fd9b6935a2f3a4cc79f2b71e
     }
 
     /**
