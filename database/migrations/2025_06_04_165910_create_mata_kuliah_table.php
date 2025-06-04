@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sesi', function (Blueprint $table) {
-            $table->id();
-            $table->String('Nama');
+        Schema::create('mata_kuliah', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('nama', 100);
+            $table->string('kode_mk', 20)->unique();
+            $table->uuid('prodi_id');
+            $table->foreign('prodi_id')->references('id')->on('prodi')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sesi');
+        Schema::dropIfExists('mata_kuliah');
     }
 };
