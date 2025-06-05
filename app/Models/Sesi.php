@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sesi extends Model
 {
-    use HasUuids;
-    protected $table = 'Sesi';
+    protected $table = 'sesi';
 
     protected $fillable = [
-        'Nama'
+        'nama'
     ];
 
 }
