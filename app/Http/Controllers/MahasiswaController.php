@@ -23,12 +23,7 @@ class MahasiswaController extends Controller
     public function create()
     {
         $prodi = Prodi::all();
-<<<<<<< HEAD
-        return view('mahasiswa.create', compact('prodi'));
-    }
-=======
         return view('mahasiswa.create', compact('prodi'));    }
->>>>>>> 394dcf666dc4f1e3fd9b6935a2f3a4cc79f2b71e
 
     /**
      * Store a newly created resource in storage.
