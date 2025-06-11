@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Mahasiswa')
+@section('title', 'Materi')
 @section('content')
     <!--begin::Row-->
     <div class="row">
@@ -8,7 +8,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-            <h3 class="card-title">Mahasiswa</h3>
+            <h3 class="card-title">Materi</h3>
             <div class="card-tools">
                 <button
                 type="button"
@@ -30,29 +30,29 @@
             </div>
             </div>
             <div class="card-body">
-                <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary">Tambah</a>
+                <a href="{{ route('materi.create') }}" class="btn btn-sm btn-primary"><i class="bi bi-file-earmark-plus-fill"></i> Tambah</a>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>NPM</th>
-                            <th>Nama</th>
-                            <th>Program Studi</th>
-                            <th>Fakultas</th>
-                            <th></th>
+                            <th>Mata Kuliah</th>
+                            <th>Dosen</th>
+                            <th>Pokok Bahasan</th>
+                            <th>File Materi</th>
+                            <th>Pertemuan</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($mahasiswa as $item)
+                        @foreach ($materi as $item)
                         <tr>
-                            <td><img src=" {{ asset('storage/images/'. $item->foto)  }}" width="80px" /></td>
-                            <td>{{ $item->npm }}</td>
-                            <td>{{ $item->nama }}</td>
-                            <td>{{ $item->prodi->nama }}</td>
-                            <td>{{ $item->prodi->fakultas->nama }}</td>
+                            <td>{{ $item->mataKuliah->nama }}</td>
+                            <td>{{ $item->dosen->name }}</td>
+                            <td>{{ $item->pokok_bahasan }}</td>
+                            <td>{{ $item->file_materi }}</td>
+                            <td>{{ $item->pertemuan }}</td>
                             <td>
-                                <a href="{{ route('mahasiswa.edit', $item->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-fill"></i></a>
-                                <form method="POST" action="{{ route('mahasiswa.destroy', $item->id) }}" class="d-inline">
+                                <a href="{{ route('materi.edit', $item->id) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-fill"></i></a>
+                                <form method="POST" action="{{ route('materi.destroy', $item->id) }}" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger btn-rounded show_confirm"
